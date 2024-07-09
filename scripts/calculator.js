@@ -5,3 +5,7 @@ function input(x) {
         document.getElementById('result').value += x;
     }
 }
+
+function allClear() {
+    document.getElementById('result').value = 0;
+}
