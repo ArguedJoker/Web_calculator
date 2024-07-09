@@ -6,7 +6,7 @@ function input(x) {
     }
 }
 
-function operator() {
+function operator(x) {
     switch(x) {
         case 1: 
             document.getElementById('operation').value = 1; // addition
