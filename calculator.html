@@ -10,6 +10,7 @@
 <body>
     <main>
         <input id = "operation" value = "0" type = "hidden"> <!-- These hidden inputs contain our data -->
+        <input id = "operand" value = "0" type = "hidden"> <!-- this will store the first number typed in -->
         <table>
             <caption><input id = "result" type = "text" value = "0" readonly></caption>
             <tr>
@@ -34,7 +35,7 @@
                 <td><input id = "one" value = "1" type = "button" onclick = "input(1)"></td>
                 <td><input id = "two" value = "2" type = "button" onclick = "input(2)"></td>
                 <td><input id = "three" value = "3" type = "button" onclick = "input(3)"></td>
-                <td><input id = "add" value = "&plus;" type = "button" onclick = "operators(1)"></td> <!-- We use the plus entity for adding. Additionally, we use an operators funtion since we have multiple operators to account for that  -->
+                <td><input id = "add" value = "&plus;" type = "button" onclick = "operator(1)"></td> <!-- We use the plus entity for adding. Additionally, we use an operators funtion since we have multiple operators to account for that  -->
             </tr>
             <tr>
                 <td><input id = "plusMinus" value = "&plusmn;" type = "button" onclick = "plusMinus()"></td> <!-- We use an entity that allows us to use plus and minus to change a negative number to positive or a positive number to negative -->
