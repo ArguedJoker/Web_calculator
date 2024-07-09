@@ -9,3 +9,9 @@ function input(x) {
 function allClear() {
     document.getElementById('result').value = 0;
 }
+
+function plusMinus() {
+    let x = parseFloat(document.getElementById('result').value);
+    x *= -1;
+    document.getElementById('result').value = x;
+}
