@@ -21,3 +21,9 @@ function percent() {
     x *= 0.01;
     document.getElementById('result').value = x;
 }
+
+function square() {
+    let x = parseFloat(document.getElementById('result').value);
+    x *= x;
+    document.getElementById('result').value = x;
+}
