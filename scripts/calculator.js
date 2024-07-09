@@ -60,7 +60,7 @@ function operators(x) {
 }
 
 function equals() {
-    operator(parseInt(document.getElementById('operation').value));
+    operators(parseInt(document.getElementById('operation').value));
     document.getElementById('result').value = document.getElementById('operand').value;
     document.getElementById('operand').value = "";
 
