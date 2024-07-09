@@ -15,3 +15,9 @@ function plusMinus() {
     x *= -1;
     document.getElementById('result').value = x;
 }
+
+function percent() {
+    let x = parseFloat(document.getElementById('result').value);
+    x *= 0.01;
+    document.getElementById('result').value = x;
+}
