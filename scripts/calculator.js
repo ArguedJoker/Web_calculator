@@ -1,25 +1,39 @@
-function equivalentCheck() { // This allows the last calue to remain in view until the other buttons are pressed
+function equivalentCheck() { // This allows the last value to remain in view until the other buttons are pressed
     if (parseInt(document.getElementById('equivalent').value)) {
         document.getElementById('equivalent').value = 0;
         document.getElementById('result').value = o;
     }
-}
+} 
 
 function input(x) {
 
     equivalentCheck(); 
 
-    if (document.getElementById('result').value == 0) { // This checks the 0 and gets rid of it when entering a number for the first time
-        document.getElementById('result').value = x;
-    } else {
-        document.getElementById('result').value += x;
+    let y = parseFloat(document.getElementById('result').value);
+    if (document.getElementById('decimalVar').value == 0) {
+        x += y * 10; // Multiply text input by 10 and add the value of x
+        document.getElementById('result').value = x; // return x to the text output
+    } else { // if decimal is true
+        let decimalCount = parseInt(document.getElementById('decimalVar').value);
+        if (decimalCount ==1) {
+            x *= 1/10; // using math to place the decimal point
+            y += x;
+            document.getElementById('result').value = y;
+        } else {
+            document.getElementById('result').value =+ x; //if there is a decimal then we just append
+        }
+
+        decimalCount++;
+
+        document.getElementById('decimalVar').value = decimalCount;
     }
 }
 
 
-function operandCheck() {
+ function operandCheck() {
     if (document.getElementById('operand').value == "") {
         document.getElementById('operand').value = document.getElementById('result').value;
+        // document.getElementById('result').value = 0; This is supposed to be temporary and used for troubleshooting
         document.getElementById('equivalent').value = 1;
 
     } else {
@@ -48,7 +62,7 @@ function operatorCheck() {
     document.getElementById('operand').value = a;
     document.getElementById('result').value = a;
     document.getElementById('equivalent').value = 1;
-}
+} 
 
 function operators(x) {
     switch(x) {
@@ -76,6 +90,15 @@ function equals() {
     document.getElementById('operand').value = "";
     document.getElementById('equivalent').value = 1;
 
+}
+
+function decimalPoint() {
+    if (document.getElementById('decimalVar').value == 0) { // Prevent multiple decimal points
+        document.getElementById('decimalVar').value == 1;
+    }
+    if (parseInt(document.getElementById('operation').value)) { // If this is an empty string it will return false
+        document.getElementById('result').value = 0;
+    }
 }
 
 function allClear() {
