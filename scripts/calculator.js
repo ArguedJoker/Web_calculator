@@ -6,6 +6,24 @@ function input(x) {
     }
 }
 
+function operator() {
+    switch(x) {
+        case 1: 
+            document.getElementById('operation').value = 1; // addition
+            break;
+        case 2:
+            document.getElementById('operation').value = 2; // subtraction
+            break;
+        case 3:
+            document.getElementById('operation').value = 3; // multiplication
+            break;
+        case 4:
+            document.getElementById('operation').value = 4; // division
+            break;
+        default:
+    }
+}
+
 function allClear() {
     document.getElementById('result').value = 0;
 }
