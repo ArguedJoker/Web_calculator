@@ -9,6 +9,9 @@ function input(x) {
 function operandCheck() {
     if (document.getElementById('operand').value == "") {
         document.getElementById('operand').value = document.getElementById('result').value;
+
+        document.getElementById('result').value = 0; // this is temporary for troubleshooting
+
     } else {
         operatorCheck();
     }
@@ -36,7 +39,7 @@ function operatorCheck() {
     document.getElementById('result').value = a;
 }
 
-function operator(x) {
+function operators(x) {
     switch(x) {
         case 1: 
             document.getElementById('operation').value = 1; // addition
@@ -56,8 +59,17 @@ function operator(x) {
     operandCheck();
 }
 
+function equals() {
+    operator(parseInt(document.getElementById('operation').value));
+    document.getElementById('result').value = document.getElementById('operand').value;
+    document.getElementById('operand').value = "";
+
+}
+
 function allClear() {
     document.getElementById('result').value = 0;
+    document.getElementById('operand').value = "";
+    document.getElementById('operation').value = 0;
 }
 
 function plusMinus() {
@@ -77,3 +89,4 @@ function square() {
     x *= x;
     document.getElementById('result').value = x;
 }
+
